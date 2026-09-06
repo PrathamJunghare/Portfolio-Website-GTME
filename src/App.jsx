@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const BASE = import.meta.env.BASE_URL || "/";
 const asset = (p) => `${BASE}${p.replace(/^\//, "")}`;
@@ -360,6 +361,7 @@ export default function App() {
           </div>
         </div>
       </footer>
+      <Analytics />
     </div>
   );
 }
