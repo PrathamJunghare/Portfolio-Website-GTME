@@ -8,7 +8,7 @@ const PHOTO = asset("img/pratham.png");
 const RESUME = asset("Pratham-Junghare-Resume.pdf");
 const RESUME_FILENAME = "Pratham-Junghare-Resume.pdf";
 
-const LINKEDIN = "https://www.linkedin.com/in/pratham-junghare/";
+const LINKEDIN = "https://www.linkedin.com/in/pratham-junghare-04918a22b";
 const EMAIL = "pratham.anulaxmi@gmail.com";
 
 const TOOLS = [
