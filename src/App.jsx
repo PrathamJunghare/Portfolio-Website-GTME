@@ -5,7 +5,7 @@ const BASE = import.meta.env.BASE_URL || "/";
 const asset = (p) => `${BASE}${p.replace(/^\//, "")}`;
 
 const PHOTO = asset("img/pratham.png");
-const RESUME = asset("docs/Pratham-Junghare-Resume.pdf");
+const RESUME = asset("Pratham-Junghare-Resume.pdf");
 const RESUME_FILENAME = "Pratham-Junghare-Resume.pdf";
 
 const LINKEDIN = "https://www.linkedin.com/in/pratham-junghare/";
