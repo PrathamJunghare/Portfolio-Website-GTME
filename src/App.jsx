@@ -175,7 +175,7 @@ export default function App() {
             </div>
 
             <h1 className="heroTitle">
-              I build systems that <span className="highlight">find, qualify,</span> and <span className="highlight">route revenue.</span>
+              I build systems that <span className="highlight">find, qualify</span> and <span className="highlight">route revenue.</span>
             </h1>
 
             {/* Photo & Key Stats */}
