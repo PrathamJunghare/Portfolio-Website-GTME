@@ -31,6 +31,13 @@ const TOOLS = [
 
 const PROJECTS = [
   {
+    title: "Salesforce Lead Intelligence, Built on Claude",
+    problem: "After every event, the events team had to manually map each lead against Salesforce. This mapping and enrichment took the team 5 to 6 hours per event.",
+    solution: "Connected Claude CLI directly to Salesforce to automate the mapping. The team feeds in the raw event list of names, designations and companies. Claude matches each lead to its Salesforce record, checks the full history and resolves the correct current stage based on the most recent event.",
+    outcome: "What took the events team 5 to 6 hours now takes about 1 hour to run, with 100% accuracy on stage and record matching.",
+    tag: "5-6 Hrs to 1 Hr"
+  },
+  {
     title: "Champion Job Change Tracking",
     problem: "When past champions or happy users switch companies, outbound emails get lost or ignored if sent to old addresses.",
     solution: "Built an automated pipeline tracking champion career movements, enriching new work emails and triggering warm outbound campaigns.",
