@@ -33,7 +33,7 @@ const PROJECTS = [
   {
     title: "Champion Job Change Tracking",
     problem: "When past champions or happy users switch companies, outbound emails get lost or ignored if sent to old addresses.",
-    solution: "Built an automated pipeline tracking champion career movements, enriching new work emails, and triggering warm outbound campaigns.",
+    solution: "Built an automated pipeline tracking champion career movements, enriching new work emails and triggering warm outbound campaigns.",
     outcome: "Increased email reply rates from 2% to 7% (a ~3.5x jump in conversions).",
     tag: "3.5x Reply Boost"
   },
@@ -47,7 +47,7 @@ const PROJECTS = [
   {
     title: "Persona & ICP Lead Scoring Engine",
     problem: "Outbound lists treated every prospect equally regardless of title fit, wasting tokens and rep effort on low-value leads.",
-    solution: "Built a scoring engine evaluating company fit, designation relevance, and product alignment to filter down and prioritize top decision-makers.",
+    solution: "Built a scoring engine evaluating company fit, designation relevance and product alignment to filter down and prioritize top decision-makers.",
     outcome: "Filtered out unproductive leads and prioritized high-intent decision-makers.",
     tag: "Targeted Routing"
   },
@@ -218,7 +218,7 @@ export default function App() {
             </div>
 
             <p className="heroSub">
-              Automating prospect research, lead qualification, and outbound infrastructure. Powered by Clay, n8n, Python, and custom AI agents.
+              Automating prospect research, lead qualification and outbound infrastructure. Powered by Clay, n8n, Python and custom AI agents.
             </p>
 
             <div className="heroCta">
@@ -245,7 +245,7 @@ export default function App() {
               <div className="thinkCard">
                 <h3>I did the job by hand before I automated it.</h3>
                 <p>
-                  I started in manual prospect research, including collection, MAU scraping, LinkedIn sourcing, and ICP identification. Every automation I have built since came out of a bottleneck I had personally sat in.
+                  I started in manual prospect research, including collection, MAU scraping, LinkedIn sourcing and ICP identification. Every automation I have built since came out of a bottleneck I had personally sat in.
                 </p>
               </div>
 
@@ -259,7 +259,7 @@ export default function App() {
               <div className="thinkCard">
                 <h3>End-to-end, not point solutions.</h3>
                 <p>
-                  Enriched data that does not flow into scoring, routing, outreach, and CRM writeback is just a spreadsheet. I build the whole path.
+                  Enriched data that does not flow into scoring, routing, outreach and CRM writeback is just a spreadsheet. I build the whole path.
                 </p>
               </div>
 
