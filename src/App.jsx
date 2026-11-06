@@ -908,21 +908,9 @@ img {
 }
 
 /* Wide: use the extra width for more columns */
-@media (min-width: 1024px) {
-  .projectList {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (min-width: 1400px) {
   .thinkGrid {
     grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 1500px) {
-  .projectList {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
