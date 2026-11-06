@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ArchitecturePage, ArchCta, ARCH_CSS } from "./Architecture.jsx";
 import { Analytics } from "@vercel/analytics/react";
 
 const BASE = import.meta.env.BASE_URL || "/";
@@ -42,7 +43,8 @@ const PROJECTS = [
     problem: "When past champions or happy users switch companies, outbound emails get lost or ignored if sent to old addresses.",
     solution: "Built an automated pipeline tracking champion career movements, enriching new work emails and triggering warm outbound campaigns.",
     outcome: "Increased email reply rates from 2% to 7% (a ~3.5x jump in conversions).",
-    tag: "3.5x Reply Boost"
+    tag: "3.5x Reply Boost",
+    arch: "champion-job-change"
   },
   {
     title: "Speed-to-Lead AI Voice Qualifier",
@@ -148,10 +150,38 @@ function DownloadIcon({ size = 18 }) {
 
 export default function App() {
   const [photoOk, setPhotoOk] = useState(true);
+  const [route, setRoute] = useState(() => window.location.hash);
+
+  useEffect(() => {
+    const onHash = () => setRoute(window.location.hash);
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
+
+  const archMatch = route.match(/^#\/architecture\/([\w-]+)/);
+  const archSlug = archMatch ? archMatch[1] : null;
+
+  useEffect(() => {
+    if (!archSlug && route === "#projects") {
+      requestAnimationFrame(() => {
+        const el = document.getElementById("projects");
+        if (el) el.scrollIntoView();
+      });
+    }
+  }, [archSlug, route]);
+
+  if (archSlug) {
+    return (
+      <div className="page">
+        <style>{CSS + ARCH_CSS}</style>
+        <ArchitecturePage slug={archSlug} />
+      </div>
+    );
+  }
 
   return (
     <div className="page">
-      <style>{CSS}</style>
+      <style>{CSS + ARCH_CSS}</style>
 
       {/* Header */}
       <header className="topbar">
@@ -297,7 +327,7 @@ export default function App() {
         </section>
 
         {/* Projects Section */}
-        <section className="section">
+        <section className="section" id="projects">
           <div className="container">
             <h2 className="sectionHeader">
               <span className="yellowSquare"></span> What I've Built
@@ -312,7 +342,10 @@ export default function App() {
                   <div className="projectBody">
                     <p><strong>Problem:</strong> {proj.problem}</p>
                     <p><strong>Solution:</strong> {proj.solution}</p>
-                    <p className="projectOutcome"><strong>Outcome:</strong> {proj.outcome}</p>
+                    <div className="projectOutcome outcomeRow">
+                      <p><strong>Outcome:</strong> {proj.outcome}</p>
+                      {proj.arch && <ArchCta slug={proj.arch} />}
+                    </div>
                   </div>
                 </div>
               ))}
