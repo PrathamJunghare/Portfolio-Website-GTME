@@ -1011,6 +1011,10 @@ img {
     gap: 8px;
   }
 
+  .projectHeader h3 {
+    flex: 0 0 auto;
+  }
+
   .projectTag {
     white-space: normal;
   }
