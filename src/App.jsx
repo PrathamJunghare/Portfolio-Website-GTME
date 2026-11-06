@@ -101,9 +101,9 @@ function CurvedArrowBottomRight() {
   );
 }
 
-function ArrowUpRightIcon({ size = 18 }) {
+function ArrowUpRightIcon({ size = 18, className }) {
   return (
-    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg className={className} viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="7" y1="17" x2="17" y2="7" />
       <polyline points="7 7 17 7 17 17" />
     </svg>
@@ -401,6 +401,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+img {
+  max-width: 100%;
+}
+
+.page {
+  overflow-x: clip;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -415,7 +423,7 @@ body {
   background: rgba(245, 244, 239, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-color);
-  height: 64px;
+  height: 4rem;
 }
 
 .topbarInner {
@@ -533,7 +541,7 @@ body {
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 700;
   line-height: 1.2;
-  max-width: 800px;
+  max-width: 50rem;
   margin-bottom: 30px;
 }
 
@@ -545,8 +553,8 @@ body {
 .stage {
   position: relative;
   width: 100%;
-  max-width: 680px;
-  height: 340px;
+  max-width: 42.5rem;
+  height: 21.25rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -567,8 +575,8 @@ body {
 }
 
 .photoPlaceholder {
-  width: 200px;
-  height: 280px;
+  width: 12.5rem;
+  height: 17.5rem;
   background: #fff;
   border: 1px dashed var(--border-color);
   display: flex;
@@ -583,7 +591,7 @@ body {
   z-index: 10;
   background: #fff;
   border: 1px solid var(--dark-border);
-  padding: 8px 14px;
+  padding: 0.5rem 0.875rem;
   text-align: left;
   box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
@@ -617,25 +625,25 @@ body {
 /* Curved Directional Arrows */
 .curvedArrow {
   position: absolute;
-  width: 50px;
-  height: 35px;
+  width: 3.125rem;
+  height: 2.1875rem;
   color: var(--text-main);
   pointer-events: none;
 }
 
 .arrowTopLeft {
-  right: -55px;
-  top: 10px;
+  right: -3.4375rem;
+  top: 0.625rem;
 }
 
 .arrowBottomLeft {
-  right: -55px;
-  bottom: 25px;
+  right: -3.4375rem;
+  bottom: 1.5625rem;
 }
 
 .arrowBottomRight {
-  left: -55px;
-  bottom: 25px;
+  left: -3.4375rem;
+  bottom: 1.5625rem;
 }
 
 .heroSub {
@@ -724,12 +732,14 @@ body {
 
 /* Projects Section */
 .projectList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
 .projectCard {
+  min-width: 0;
+  overflow-wrap: break-word;
   background: #fff;
   border: 1px solid var(--border-color);
   padding: 24px;
@@ -739,16 +749,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
   margin-bottom: 12px;
 }
 
 .projectHeader h3 {
+  flex: 1 1 14rem;
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 .projectTag {
+  white-space: nowrap;
   background: var(--accent-yellow-light);
   font-size: 0.8rem;
   font-weight: 700;
@@ -838,6 +852,7 @@ body {
 }
 
 .connectItem span {
+  overflow-wrap: anywhere;
   font-size: 0.8rem;
   color: var(--text-muted);
 }
@@ -880,8 +895,124 @@ body {
   color: var(--text-main);
 }
 
-/* Responsive */
+/* Large screens: fill the full width, scale everything with the screen */
+@media (min-width: 1280px) {
+  html {
+    font-size: clamp(16px, 1.05vw, 24px);
+  }
+
+  .container {
+    max-width: 120rem;
+    padding: 0 clamp(24px, 5vw, 120px);
+  }
+}
+
+/* Wide: use the extra width for more columns */
+@media (min-width: 1024px) {
+  .projectList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1400px) {
+  .thinkGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1500px) {
+  .projectList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .tag {
+    padding: 0.4rem 0.7rem;
+  }
+
+  .tagNum {
+    font-size: 1rem;
+  }
+
+  .tagText {
+    font-size: 0.7rem;
+  }
+
+  .curvedArrow {
+    width: 2.5rem;
+    height: 1.75rem;
+  }
+
+  .arrowTopLeft,
+  .arrowBottomLeft {
+    right: -2.75rem;
+  }
+
+  .arrowBottomRight {
+    left: -2.75rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .topbarInner {
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 1rem;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navActions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .iconLink {
+    width: 44px;
+    height: 44px;
+  }
+
+  .btn {
+    min-height: 44px;
+  }
+
+  .hero {
+    padding: 40px 0 24px;
+  }
+
+  .heroBadge {
+    font-size: 0.95rem;
+    padding: 8px 16px;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+  }
+
+  .heroCta .btn,
+  .resumeBox .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sectionHeader {
+    font-size: 1.6rem;
+  }
+
   .thinkGrid {
     grid-template-columns: 1fr;
   }
@@ -890,6 +1021,10 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .projectTag {
+    white-space: normal;
   }
 
   .stage {
@@ -911,6 +1046,14 @@ body {
 
   .curvedArrow {
     display: none;
+  }
+
+  .connectCard {
+    padding: 28px 16px;
+  }
+
+  .connectItem {
+    min-height: 56px;
   }
 
   .footerInner {
