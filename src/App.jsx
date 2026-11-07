@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArchitecturePage, ArchCta, ARCH_CSS } from "./JobChangeArchitecture.jsx";
+import { ArchitecturePage, ArchCta, ARCH_CSS } from "./Architecture.jsx";
 import { Analytics } from "@vercel/analytics/react";
 
 const BASE = import.meta.env.BASE_URL || "/";
@@ -51,7 +51,8 @@ const PROJECTS = [
     problem: "Inbound leads sat untouched for 24-40 hours while SDRs queued up calls manually, leading to cold intent.",
     solution: "Designed an automated AI voice calling pipeline that instantly dials and pre-qualifies inbound leads as soon as they submit a form.",
     outcome: "Cut lead response time from ~30 hours to under 5 minutes.",
-    tag: "< 5 Min Response"
+    tag: "< 5 Min Response",
+    arch: "speed-to-lead"
   },
   {
     title: "Persona & ICP Lead Scoring Engine",
