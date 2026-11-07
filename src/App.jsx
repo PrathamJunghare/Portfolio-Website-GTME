@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArchitecturePage, ArchCta, ARCH_CSS } from "./Architecture.jsx";
+import { ArchitecturePage, ArchCta, ARCH_CSS } from "./JobChangeArchitecture.jsx";
 import { Analytics } from "@vercel/analytics/react";
 
 const BASE = import.meta.env.BASE_URL || "/";
@@ -44,7 +44,7 @@ const PROJECTS = [
     solution: "Built an automated pipeline tracking champion career movements, enriching new work emails and triggering warm outbound campaigns.",
     outcome: "Increased email reply rates from 2% to 7% (a ~3.5x jump in conversions).",
     tag: "3.5x Reply Boost",
-    arch: "champion-job-change"
+    arch: "job-change"
   },
   {
     title: "Speed-to-Lead AI Voice Qualifier",

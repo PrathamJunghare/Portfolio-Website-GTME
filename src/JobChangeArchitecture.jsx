@@ -10,8 +10,8 @@ const logo = (file) => `${BASE}img/tools/${file}`;
 /*     Optional: logo: "/img/tools/clay.svg" to use an official logo.  */
 /* ------------------------------------------------------------------ */
 export const ARCHITECTURES = {
-  "champion-job-change": {
-    title: "Champion Job Change Tracking",
+  "job-change": {
+  title: "Job Change Architecture",
     tag: "3.5x Reply Boost",
     problem:
       "When past champions or happy users switch companies, outbound emails sent to their old addresses get lost or ignored.",
